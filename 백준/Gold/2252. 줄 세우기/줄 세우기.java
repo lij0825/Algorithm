@@ -2,9 +2,8 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayDeque;
 import java.util.ArrayList;
-import java.util.Queue;
+import java.util.Stack;
 import java.util.StringTokenizer;
 
 class Main {
@@ -27,23 +26,21 @@ class Main {
             students[smaller].add(bigger);
             relat[bigger] += 1;
         }
-        Queue<Integer> q = new ArrayDeque<>();
+        Stack<Integer> stack = new Stack<>();
         for (int i = 1; i <= n; i++) {
             if (relat[i] == 0) {
-                q.add(i);
+                stack.push(i);
                 visited[i] = true;
             }
         }
-        while (!q.isEmpty()) {
-            int idx = q.poll();
+        while (!stack.isEmpty()) {
+            int idx = stack.pop();
             sb.append(idx).append(" ");
             for (int i = 0; i < students[idx].size(); i++) {
                 relat[(int) students[idx].get(i)] -= 1;
-            }
-            for (int i = 1; i <= n; i++) {
-                if (relat[i] == 0 && !visited[i]) {
-                    q.add(i);
-                    visited[i] = true;
+                if (relat[(int) students[idx].get(i)] == 0 && !visited[(int) students[idx].get(i)]) {
+                    stack.push((int) students[idx].get(i));
+                    visited[(int) students[idx].get(i)] = true;
                 }
             }
         }
