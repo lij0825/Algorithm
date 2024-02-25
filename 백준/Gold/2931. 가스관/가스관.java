@@ -1,10 +1,7 @@
-
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Stack;
 import java.util.StringTokenizer;
 
@@ -13,7 +10,6 @@ public class Main {
     static int[] dx = { 1, 0, -1, 0 };
     static String[][] map;
     static int[][] path;
-    static boolean[][] cant;
     static int[] Z = new int[2], M = new int[2];
     static int r, c;
 
@@ -24,10 +20,6 @@ public class Main {
         c = Integer.parseInt(st.nextToken()); // 가로
         map = new String[r][c];
         path = new int[r][c];
-        cant = new boolean[r][c];
-        for (boolean[] bl : cant) {
-            Arrays.fill(bl, true);
-        }
         for (int i = 0; i < r; i++) {
             String[] str = br.readLine().split("");
             for (int j = 0; j < c; j++) {
@@ -74,18 +66,13 @@ public class Main {
                         continue;
                     }
                 }
-                cant[i][j] = false;
             }
         }
-
-        cant[Z[0]][Z[1]] = false;
-        cant[M[0]][M[1]] = false;
 
         int ansy = 0;
         int ansx = 0;
         String shape = " ";
 
-        ArrayList<ArrayList> shp = new ArrayList<ArrayList>();
         ArrayList<int[]> way = new ArrayList<>();
         Stack<int[]> stack = new Stack<>();
         for (int y = 0; y < r; y++) {
@@ -100,7 +87,6 @@ public class Main {
                         if (map[ny][nx].equals(".")) {
                             continue;
                         }
-
                         if (map[ny][nx].equals("+")) {
                             way.add(new int[] { y, x, i });
                         } else if (i == 0) {
@@ -176,22 +162,12 @@ public class Main {
         int nx = x + dx;
 
         if (map[ny][nx].equals("|")) {
-            if (checkRange(ny, nx + 1)) {
-                cant[ny][nx + 1] = false;
-            }
-            if (checkRange(ny, nx - 1)) {
-                cant[ny][nx - 1] = false;
-            }
+
             path[ny][nx] = path[y][x] + 1;
             cantChk(ny, nx, dy, dx);
         }
         if (map[ny][nx].equals("-")) {
-            if (checkRange(ny + 1, nx)) {
-                cant[ny + 1][nx] = false;
-            }
-            if (checkRange(ny - 1, nx)) {
-                cant[ny - 1][nx] = false;
-            }
+
             path[ny][nx] = path[y][x] + 1;
             cantChk(ny, nx, dy, dx);
         }
@@ -200,12 +176,7 @@ public class Main {
             cantChk(ny, nx, dy, dx);
         }
         if (map[ny][nx].equals("1")) {
-            if (checkRange(ny - 1, nx)) {
-                cant[ny - 1][nx] = false;
-            }
-            if (checkRange(ny, nx - 1)) {
-                cant[ny][nx - 1] = false;
-            }
+
             if (dy < 0) {
                 path[ny][nx] = path[y][x] + 1;
                 cantChk(ny, nx, 0, 1);
@@ -215,12 +186,7 @@ public class Main {
             }
         }
         if (map[ny][nx].equals("2")) {
-            if (checkRange(ny + 1, nx)) {
-                cant[ny + 1][nx] = false;
-            }
-            if (checkRange(ny, nx - 1)) {
-                cant[ny][nx - 1] = false;
-            }
+
             if (dy > 0) {
                 path[ny][nx] = path[y][x] + 1;
                 cantChk(ny, nx, 0, 1);
@@ -230,12 +196,7 @@ public class Main {
             }
         }
         if (map[ny][nx].equals("3")) {
-            if (checkRange(ny, nx + 1)) {
-                cant[ny][nx + 1] = false;
-            }
-            if (checkRange(ny - 1, nx)) {
-                cant[ny - 1][nx] = false;
-            }
+
             if (dy > 0) {
                 path[ny][nx] = path[y][x] + 1;
                 cantChk(ny, nx, 0, -1);
@@ -245,12 +206,7 @@ public class Main {
             }
         }
         if (map[ny][nx].equals("4")) {
-            if (checkRange(ny - 1, nx)) {
-                cant[ny - 1][nx] = false;
-            }
-            if (checkRange(ny, nx + 1)) {
-                cant[ny][nx + 1] = false;
-            }
+
             if (dy < 0) {
                 path[ny][nx] = path[y][x] + 1;
                 cantChk(ny, nx, 0, -1);
