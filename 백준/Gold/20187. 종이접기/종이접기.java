@@ -1,10 +1,11 @@
+
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Deque;
-import java.util.Queue;
 import java.util.StringTokenizer;
 
 /**
@@ -25,12 +26,13 @@ public class Main {
         for (int i = 0; i < 2 * k; i++) {
             q.add(st.nextToken());
         }
-        q.addLast(q.pollFirst());
+        q.addFirst(q.pollLast());
         while (!q.isEmpty()) {
-            if (q.peekLast().equals(q.peekFirst())) {
-                q.pollFirst();
+            if (!q.peekLast().equals(q.peekFirst())) {
+                break;
+            } else {
+                q.pollLast();
             }
-            break;
         }
         int[][] ans = new int[2][2];
         int point = Integer.parseInt(br.readLine());
@@ -92,7 +94,7 @@ public class Main {
                 ans = new int[][] { { 0, 1, }, { 2, 3 } };
             }
             if (point == 2) {
-                ans = new int[][] { { 3, 2, }, { 0, 1 } };
+                ans = new int[][] { { 3, 2, }, { 1, 0 } };
             }
             if (point == 3) {
                 ans = new int[][] { { 2, 3, }, { 0, 1 } };
