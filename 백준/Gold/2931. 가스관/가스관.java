@@ -2,7 +2,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Stack;
 import java.util.StringTokenizer;
 
 public class Main {
@@ -74,7 +73,7 @@ public class Main {
         String shape = " ";
 
         ArrayList<int[]> way = new ArrayList<>();
-        Stack<int[]> stack = new Stack<>();
+        ArrayList<int[]> stack = new ArrayList<>();
         for (int y = 0; y < r; y++) {
             for (int x = 0; x < c; x++) {
                 if (path[y][x] != 0 || !map[y][x].equals(".")) {
@@ -119,20 +118,21 @@ public class Main {
         stack.add(way.get(0));
         int cnt = 1;
         while (!stack.isEmpty()) {
-            if (stack.peek()[0] == way.get(cnt)[0] && stack.peek()[1] == way.get(cnt)[1]) {
+            if (stack.get(stack.size() - 1)[0] == way.get(cnt)[0]
+                    && stack.get(stack.size() - 1)[1] == way.get(cnt)[1]) {
                 stack.add(way.get(cnt++));
                 break;
             }
-            stack.pop();
+            stack.remove(stack.size() - 1);
             stack.add(way.get(cnt++));
         }
-        ansy = stack.peek()[0];
-        ansx = stack.peek()[1];
+        ansy = stack.get(stack.size() - 1)[0];
+        ansx = stack.get(stack.size() - 1)[1];
         if (way.size() == 4) {
             shape = "+";
         } else {
-            int a = stack.pop()[2];
-            int b = stack.pop()[2];
+            int a = stack.remove(stack.size() - 1)[2];
+            int b = stack.remove(stack.size() - 1)[2];
             if (a == 0 && b == 2 || a == 2 && b == 0) {
                 shape = "-";
             }
@@ -238,9 +238,6 @@ public class Main {
     }
 
     static boolean checkRange(int ny, int nx) {
-        if (ny < 0 || nx < 0 || ny >= r || nx >= c) {
-            return false;
-        }
-        return true;
+        return ny >= 0 && nx >= 0 && ny < r && nx < c;
     }
 }
