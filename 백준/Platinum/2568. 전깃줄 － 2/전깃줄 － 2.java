@@ -51,11 +51,15 @@ public class Main {
 		}
 
 		Collections.reverse(p);
+
 		ArrayList<Integer> res = new ArrayList<>();
 		for (Pair pair : p) {
 			if (pair.idx == len) {
 				len--;
 				res.add(pair.num);
+			}
+			if (len == 0) {
+				break;
 			}
 		}
 		ArrayList<Integer> cut = new ArrayList<>();
