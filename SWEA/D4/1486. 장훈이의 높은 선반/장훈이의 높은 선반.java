@@ -42,25 +42,25 @@ public class Solution {
 						set.add(arr[j]);
 					}
 				}
-				if (!set.isEmpty()) {
-					int sum = 0;
-					for (int k = 0; k < set.size(); k++) {
-
-						sum += set.get(k);
-
-						if (sum - B >= ans) {
-							break;
-						}
-					}
-					if (sum >= B) {
-						ans = Math.min(ans, sum - B);
-					}
-					if (ans == 0) {
+				int sum = 0;
+				for (int k = 0; k < set.size(); k++) {
+					sum += set.get(k);
+					if (sum - B >= ans) {
 						break;
 					}
 				}
+				if (sum - B >= ans) {
+					continue;
+				}
+				if (sum >= B) {
+					ans = Math.min(ans, sum - B);
+				}
+				if (ans == 0) {
+					break;
+				}
 
 			}
+
 			sb.append(ans + "\n");
 		}
 		System.out.println(sb);
