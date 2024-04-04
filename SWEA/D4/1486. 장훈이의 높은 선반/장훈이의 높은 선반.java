@@ -8,7 +8,6 @@ import java.util.StringTokenizer;
 public class Solution {
 
 	static int[] arr;
-	static boolean[] visited;
 	static int ans;
 
 	public static void main(String[] args) throws IOException {
@@ -26,17 +25,16 @@ public class Solution {
 			int B = Integer.parseInt(st.nextToken()); // 선반 높이
 			ans = Integer.MAX_VALUE;
 			arr = new int[N]; // 각 점원의 키
-			visited = new boolean[N];
 
 			st = new StringTokenizer(br.readLine());
 			for (int i = 0; i < N; i++) {
 				arr[i] = Integer.parseInt(st.nextToken());
 			}
 
-			List<Integer> set;
+			List<Integer> set = new ArrayList<>();
 
 			for (int i = 0; i < 1 << N; i++) {
-				set = new ArrayList<>();
+				set.clear();
 				for (int j = 0; j < N; j++) {
 					if ((i & 1 << j) != 0) {
 						set.add(arr[j]);
