@@ -20,6 +20,7 @@ public class Main {
 			int k = Integer.parseInt(st.nextToken()); // k 번째로 떨어지는 개미 출력 해야됨
 
 			Deque<Integer> dq = new ArrayDeque<>();
+
 			Ant[] ant = new Ant[N];
 
 			for (int i = 0; i < N; i++) {
@@ -34,12 +35,7 @@ public class Main {
 				dq.add(ID);
 			}
 
-			Arrays.sort(ant, (a, b) -> {
-				if (a.len != b.len) {
-					return a.len - b.len;
-				}
-				return a.ID - b.ID;
-			});
+			Arrays.sort(ant);
 
 			Ant[] drop = new Ant[N];
 
@@ -55,12 +51,7 @@ public class Main {
 				drop[i] = new Ant(id, len);
 			}
 
-			Arrays.sort(drop, (a, b) -> {
-				if (a.len != b.len) {
-					return a.len - b.len;
-				}
-				return a.ID - b.ID;
-			});
+			Arrays.sort(drop);
 
 			sb.append(drop[k - 1].ID);
 			if (t != TC - 1) {
@@ -70,7 +61,7 @@ public class Main {
 		System.out.println(sb);
 	}
 
-	static class Ant {
+	static class Ant implements Comparable<Ant> {
 		int ID, len;
 
 		public Ant(int iD, int len) {
@@ -80,9 +71,12 @@ public class Main {
 		}
 
 		@Override
-		public String toString() {
-			return "Ant [ID=" + ID + ", len=" + len + "]";
+		public int compareTo(Ant o) {
+			if (this.len == o.len) {
+				return this.ID - o.ID;
+			}
+			return this.len - o.len;
 		}
-
 	}
+
 }
