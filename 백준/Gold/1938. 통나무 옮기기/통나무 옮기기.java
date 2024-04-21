@@ -6,11 +6,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Queue;
 
-class Main {
+public class Main {
 
 	static int N;
 	static String[][] board;
+	static boolean[][][] visited;
 	static List<Pair> end = new ArrayList<>();
+	static Tree tree;
 	static int[] dy = { 0, 1, 0, -1, -1, 1, 1, -1 }, dx = { 1, 0, -1, 0, 1, 1, -1, -1 };
 
 	public static void main(String[] args) throws IOException {
@@ -19,6 +21,7 @@ class Main {
 		N = Integer.parseInt(br.readLine());
 
 		board = new String[N][N];
+		visited = new boolean[2][N][N];
 
 		for (int i = 0; i < N; i++) {
 			String[] input = br.readLine().split("");
@@ -26,7 +29,7 @@ class Main {
 				board[i][j] = input[j];
 			}
 		}
-		Tree tree = new Tree(0, 0, 0, 0);
+		tree = new Tree(0, 0, 0, 0);
 		boolean flag = true;
 		for (int i = 0; i < N; i++) {
 			for (int j = 0; j < N; j++) {
@@ -38,7 +41,7 @@ class Main {
 					} else {
 						tree.y = i + 1;
 						tree.x = j;
-						tree.rc = 1;
+						tree.type = 1;
 					}
 				}
 				if (board[i][j].equals("E")) {
@@ -47,9 +50,12 @@ class Main {
 			}
 		}
 
-		boolean[][][] visited = new boolean[2][N][N];
+		System.out.println(bfs());
+	}
 
-		visited[tree.rc][tree.y][tree.x] = true;
+	static int bfs() {
+
+		visited[tree.type][tree.y][tree.x] = true;
 		Queue<Tree> q = new ArrayDeque<>();
 		q.add(tree);
 		int ans = 0;
@@ -62,11 +68,11 @@ class Main {
 			for (int i = 0; i < 4; i++) {
 				int ny = t.y + dy[i];
 				int nx = t.x + dx[i];
-				if (t.rc == 1) {
+				if (t.type == 1) {
 					if (!isIn(ny, nx) || !isIn(ny - 1, nx) || !isIn(ny + 1, nx)) {
 						continue;
 					}
-					if (visited[t.rc][ny][nx]) {
+					if (visited[t.type][ny][nx]) {
 						continue;
 					}
 					if (board[ny][nx].equals("1") || board[ny - 1][nx].equals("1") || board[ny + 1][nx].equals("1")) {
@@ -76,18 +82,18 @@ class Main {
 					if (!isIn(ny, nx) || !isIn(ny, nx - 1) || !isIn(ny, nx + 1)) {
 						continue;
 					}
-					if (visited[t.rc][ny][nx] || board[ny][nx].equals("1")) {
+					if (visited[t.type][ny][nx] || board[ny][nx].equals("1")) {
 						continue;
 					}
 					if (board[ny][nx].equals("1") || board[ny][nx - 1].equals("1") || board[ny][nx + 1].equals("1")) {
 						continue;
 					}
 				}
-				visited[t.rc][ny][nx] = true;
-				q.add(new Tree(ny, nx, t.rc, t.cnt + 1));
+				visited[t.type][ny][nx] = true;
+				q.add(new Tree(ny, nx, t.type, t.cnt + 1));
 			}
 			if (turnChk(t.y, t.x)) {
-				int newrc = t.rc == 0 ? 1 : 0;
+				int newrc = t.type == 0 ? 1 : 0;
 				if (visited[newrc][t.y][t.x]) {
 					continue;
 				}
@@ -95,24 +101,18 @@ class Main {
 				q.add(new Tree(t.y, t.x, newrc, t.cnt + 1));
 			}
 		}
-
-		System.out.println(ans);
+		return ans;
 	}
 
 	static class Tree {
-		int y, x, rc, cnt;
+		int y, x, type, cnt;
 
-		public Tree(int y, int x, int rc, int cnt) {
+		public Tree(int y, int x, int type, int cnt) {
 			super();
 			this.y = y;
 			this.x = x;
-			this.rc = rc;
+			this.type = type;
 			this.cnt = cnt;
-		}
-
-		@Override
-		public String toString() {
-			return "Tree [y=" + y + ", x=" + x + ", rc=" + rc + ", cnt=" + cnt + "]";
 		}
 
 	}
@@ -134,7 +134,7 @@ class Main {
 
 	static boolean endChk(Tree t) {
 		int cnt = 0;
-		if (t.rc == 1) {
+		if (t.type == 1) {
 			for (Pair p : end) {
 				if (p.y == t.y && p.x == t.x) {
 					cnt += 1;
