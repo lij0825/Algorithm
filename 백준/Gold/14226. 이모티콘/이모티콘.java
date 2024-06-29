@@ -10,10 +10,10 @@ public class Main {
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int S = Integer.parseInt(br.readLine());
-		int[][] dp = new int[2001][2001];
+		int[][] dp = new int[S + 1][S + 1];
 
-		for (int i = 0; i < 2001; i++) {
-			for (int j = 0; j < 2001; j++) {
+		for (int i = 0; i < S + 1; i++) {
+			for (int j = 0; j < S + 1; j++) {
 				dp[i][j] = MAX;
 			}
 		}
@@ -33,7 +33,7 @@ public class Main {
 			q.add(new info(temp.s, temp.s, temp.t + 1));
 			dp[temp.s][temp.s] = temp.t + 1;
 
-			if (temp.s + temp.c < 2001 && dp[temp.s + temp.c][temp.c] > temp.t + 1) {
+			if (temp.s + temp.c < S + 1 && dp[temp.s + temp.c][temp.c] > temp.t + 1) {
 				q.add(new info(temp.s + temp.c, temp.c, temp.t + 1));
 				dp[temp.s + temp.c][temp.c] = temp.t + 1;
 			}
