@@ -67,6 +67,7 @@ public class Main {
 						if (isIn(ty, tx) && visited[ty][tx]) {
 							visited[ny][nx] = true;
 							q.add(new int[] {ny, nx});
+                            break;
 						}
 					}
 				}
