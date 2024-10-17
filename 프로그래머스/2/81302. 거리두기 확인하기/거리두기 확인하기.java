@@ -67,10 +67,16 @@ class Solution {
         q.add(new int[]{y, x});
         visited[y][x] = true;
         
+        
+        
         while (!q.isEmpty()) {
             int[] yx = q.poll();
             int py = yx[0];
             int px = yx[1];
+            
+            if(Math.abs(y - py) + Math.abs(x - px) > 1){
+                continue;
+            }
             
             for (int i = 0; i < 4; i++) {
                 int ny = py + dy[i];
@@ -80,10 +86,6 @@ class Solution {
                     visited[ny][nx] = true;
                     
                     if (board[ny][nx].equals("X")) {
-                        continue;
-                    }
-                    
-                    if(Math.abs(y - ny) + Math.abs(x - nx) > 2){
                         continue;
                     }
                     
