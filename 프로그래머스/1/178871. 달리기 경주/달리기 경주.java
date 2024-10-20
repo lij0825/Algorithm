@@ -12,7 +12,9 @@ class Solution {
 
         for (String calling : callings) {
             int idx = map.get(calling);
-            swap(players, idx);
+            if(idx != 0){
+                swap(players, idx);
+            }
         }
 
         return players;
