@@ -9,7 +9,7 @@ public class Main {
 
 	static int N;
 	static String[][] board;
-	static List<int[]> teachers = new ArrayList<int[]>();
+	static List<Pair> teachers = new ArrayList<Pair>();
 	static List<int[]> empty = new ArrayList<int[]>();
 	static boolean flag = false;
 
@@ -19,16 +19,17 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st;
 
 		N = Integer.parseInt(br.readLine());
 		board = new String[N][N];
 
 		for (int i = 0; i < N; i++) {
-			StringTokenizer st = new StringTokenizer(br.readLine());
+			st = new StringTokenizer(br.readLine());
 			for (int j = 0; j < N; j++) {
 				board[i][j] = st.nextToken();
 				if (board[i][j].equals("T")) {
-					teachers.add(new int[] { i, j });
+					teachers.add(new Pair(i, j));
 				} else if (board[i][j].equals("X")) {
 					empty.add(new int[] { i, j });
 				}
@@ -70,9 +71,9 @@ public class Main {
 
 	static boolean checkSafe() {
 
-		for (int[] teacher : teachers) {
-			int ty = teacher[0];
-			int tx = teacher[1];
+		for (Pair teacher : teachers) {
+			int ty = teacher.y;
+			int tx = teacher.x;
 
 			for (int i = 0; i < 4; i++) {
 				int ny = ty + dy[i];
@@ -92,6 +93,15 @@ public class Main {
 		}
 
 		return true;
+	}
+
+	static class Pair {
+		int y, x;
+
+		Pair(int y, int x) {
+			this.y = y;
+			this.x = x;
+		}
 	}
 
 }
