@@ -4,6 +4,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.StringTokenizer;
 
 public class Solution {
 
@@ -11,6 +12,7 @@ public class Solution {
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		StringTokenizer st;
 
 		int T = Integer.parseInt(br.readLine());
 
@@ -20,13 +22,13 @@ public class Solution {
 
 		Set<Integer> check = new HashSet<Integer>();
 
-		for (int t = 1; t <= T; t++) {
+		TestCase: for (int t = 1; t <= T; t++) {
 
 			flag = true;
 			for (int i = 0; i < 9; i++) {
-				String[] nums = br.readLine().split(" ");
+				st = new StringTokenizer(br.readLine());
 				for (int j = 0; j < 9; j++) {
-					board[i][j] = Integer.parseInt(nums[j]);
+					board[i][j] = Integer.parseInt(st.nextToken());
 				}
 			}
 
@@ -37,7 +39,8 @@ public class Solution {
 					check.add(board[i][j]);
 				}
 				if (check.size() != 9) {
-					flag = false;
+					bw.write("#" + t + " 0\n");
+					continue TestCase;
 				}
 			}
 			for (int i = 0; i < 9; i++) {
@@ -46,7 +49,8 @@ public class Solution {
 					check.add(board[j][i]);
 				}
 				if (check.size() != 9) {
-					flag = false;
+					bw.write("#" + t + " 0\n");
+					continue TestCase;
 				}
 			}
 			// box check
@@ -59,16 +63,12 @@ public class Solution {
 						}
 					}
 					if (check.size() != 9) {
-						flag = false;
+						bw.write("#" + t + " 0\n");
+						continue TestCase;
 					}
 				}
 			}
-
-			if (flag) {
-				bw.write("#" + t + " 1\n");
-			} else {
-				bw.write("#" + t + " 0\n");
-			}
+			bw.write("#" + t + " 1\n");
 
 		}
 
