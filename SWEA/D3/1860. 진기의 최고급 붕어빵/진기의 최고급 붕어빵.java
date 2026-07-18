@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
 //진기의 최고급 붕어빵
@@ -22,33 +23,24 @@ public class Solution {
 			M = Integer.parseInt(st.nextToken());
 			K = Integer.parseInt(st.nextToken());
 
-			int[] time = new int[11112]; // 도착시간
+			int[] time = new int[N]; // 도착시간
 			st = new StringTokenizer(br.readLine());
 			for (int i = 0; i < N; i++) {
-				time[Integer.parseInt(st.nextToken())] += 1;
+				time[i] = Integer.parseInt(st.nextToken());
 			}
 
-			boolean flag = true;
-			int bread = 0; // 붕어빵 갯수
-			for (int i = 0; i < 11112; i++) {
-				if (i != 0 && i % M == 0) {
-					bread += K;
-				}
-				if (time[i] > 0) {
-					bread -= time[i];
-				}
-				if (bread < 0) {
-					flag = false;
+			Arrays.sort(time);
+
+			boolean isPossible = true;
+			for (int i = 0; i < N; i++) {
+				int totalBread = (time[i] / M) * K;
+				if (totalBread < i + 1) {
+					isPossible = false;
 					break;
 				}
 			}
 
-			if (flag) {
-				bw.write("#" + tc + " Possible\n");
-			} else {
-				bw.write("#" + tc + " Impossible\n");
-			}
-
+			bw.write("#" + tc + (isPossible ? " Possible\n" : " Impossible\n"));
 		}
 
 		br.close();
