@@ -2,13 +2,9 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.Stack;
 
 // 여우 줄이기
 public class Solution {
-
-	static int N;
-	static Stack<Character> stack;
 
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -16,29 +12,28 @@ public class Solution {
 
 		int TC = Integer.parseInt(br.readLine());
 		for (int tc = 0; tc < TC; tc++) {
-
-			stack = new Stack<Character>();
-			N = Integer.parseInt(br.readLine());
+			int N = Integer.parseInt(br.readLine());
 			char[] input = br.readLine().toCharArray();
 
+			char[] stack = new char[N];
+			int idx = 0;
+
 			for (int i = 0; i < N; i++) {
-				stack.push(input[i]);
-				if (stack.size() >= 3) {
-					if (stack.peek() == 'x' && stack.get(stack.size() - 2) == 'o'
-							&& stack.get(stack.size() - 3) == 'f') {
-						stack.pop();
-						stack.pop();
-						stack.pop();
+				stack[idx] = input[i];
+				idx++;
+
+				if (idx >= 3) {
+					if (stack[idx - 1] == 'x' && stack[idx - 2] == 'o' && stack[idx - 3] == 'f') {
+						idx -= 3;
 					}
 				}
 			}
 
-			bw.write(stack.size() + "\n");
+			bw.write(idx + "\n");
 		}
 
 		br.close();
 		bw.flush();
 		bw.close();
 	}
-
 }
