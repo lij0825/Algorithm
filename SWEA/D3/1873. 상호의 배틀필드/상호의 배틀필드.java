@@ -3,12 +3,14 @@ import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
+// 상호의 배틀 필드
 public class Solution {
 
 	static int H, W, N;
-	static char[] commandList;
-	static String[][] board;
-	static int[] dy = { -1, 1, 0, 0 }, dx = { 0, 0, -1, 1 };
+	static char[][] board;
+	static int[] dy = { -1, 1, 0, 0 };
+	static int[] dx = { 0, 0, -1, 1 };
+	static int tankY, tankX;
 
 	public static void main(String[] args) throws Exception {
 
@@ -18,23 +20,27 @@ public class Solution {
 		int T = Integer.parseInt(br.readLine());
 		for (int t = 1; t <= T; t++) {
 			String[] input = br.readLine().split(" ");
-
 			H = Integer.parseInt(input[0]);
 			W = Integer.parseInt(input[1]);
-			board = new String[H][W];
+			board = new char[H][W];
 
 			for (int i = 0; i < H; i++) {
-				input = br.readLine().split("");
+				String line = br.readLine();
 				for (int j = 0; j < W; j++) {
-					board[i][j] = input[j];
+					board[i][j] = line.charAt(j);
+
+					if (isTank(board[i][j])) {
+						tankY = i;
+						tankX = j;
+					}
 				}
 			}
 
 			int N = Integer.parseInt(br.readLine());
-			commandList = br.readLine().toCharArray();
+			char[] commandList = br.readLine().toCharArray();
 
 			for (int k = 0; k < N; k++) {
-				command(k);
+				command(commandList[k]);
 			}
 
 			bw.write("#" + t + " ");
@@ -44,7 +50,6 @@ public class Solution {
 				}
 				bw.write("\n");
 			}
-
 		}
 
 		br.close();
@@ -52,109 +57,78 @@ public class Solution {
 		bw.close();
 	}
 
-	// <>^v
-	static void command(int index) {
-		if (commandList[index] == 'S') {
-			for (int i = 0; i < H; i++) {
-				for (int j = 0; j < W; j++) {
-					if (isTank(i, j)) {
-						if (board[i][j].equals("^"))
-							shoot(i, j, 0);
-						else if (board[i][j].equals("v"))
-							shoot(i, j, 1);
-						else if (board[i][j].equals("<"))
-							shoot(i, j, 2);
-						else if (board[i][j].equals(">"))
-							shoot(i, j, 3);
-						return;
-					}
-				}
-			}
-		} else if (commandList[index] == 'U') {
-			for (int i = 0; i < H; i++) {
-				for (int j = 0; j < W; j++) {
-					if (isTank(i, j)) {
-						if (isIn(i - 1, j) && isFlat(i - 1, j)) {
-							board[i][j] = ".";
-							board[i - 1][j] = "^";
-						} else {
-							board[i][j] = "^";
-						}
-						return;
-					}
-				}
-			}
-		} else if (commandList[index] == 'D') {
-			for (int i = 0; i < H; i++) {
-				for (int j = 0; j < W; j++) {
-					if (isTank(i, j)) {
-						if (isIn(i + 1, j) && isFlat(i + 1, j)) {
-							board[i][j] = ".";
-							board[i + 1][j] = "v";
-						} else {
-							board[i][j] = "v";
-						}
-						return;
-					}
-				}
-			}
-		} else if (commandList[index] == 'L') {
-			for (int i = 0; i < H; i++) {
-				for (int j = 0; j < W; j++) {
-					if (isTank(i, j)) {
-						if (isIn(i, j - 1) && isFlat(i, j - 1)) {
-							board[i][j] = ".";
-							board[i][j - 1] = "<";
-						} else {
-							board[i][j] = "<";
-						}
-						return;
-					}
-				}
-			}
-		} else if (commandList[index] == 'R') {
-			for (int i = 0; i < H; i++) {
-				for (int j = 0; j < W; j++) {
-					if (isTank(i, j)) {
-						if (isIn(i, j + 1) && isFlat(i, j + 1)) {
-							board[i][j] = ".";
-							board[i][j + 1] = ">";
-						} else {
-							board[i][j] = ">";
-						}
-						return;
-					}
-				}
-			}
+	static void command(char cmd) {
+		int dir = -1;
+		char tankShape = ' ';
+
+		switch (cmd) {
+		case 'U':
+			dir = 0;
+			tankShape = '^';
+			break;
+		case 'D':
+			dir = 1;
+			tankShape = 'v';
+			break;
+		case 'L':
+			dir = 2;
+			tankShape = '<';
+			break;
+		case 'R':
+			dir = 3;
+			tankShape = '>';
+			break;
+		case 'S':
+			dir = getDir(board[tankY][tankX]);
+			shoot(tankY, tankX, dir);
+			return;
+		}
+
+		board[tankY][tankX] = tankShape;
+
+		int ny = tankY + dy[dir];
+		int nx = tankX + dx[dir];
+
+		if (isIn(ny, nx) && board[ny][nx] == '.') {
+			board[ny][nx] = tankShape;
+			board[tankY][tankX] = '.';
+			tankY = ny;
+			tankX = nx;
 		}
 	}
 
 	static void shoot(int y, int x, int dir) {
-		while (isIn(y, x)) {
+		while (true) {
 			y += dy[dir];
 			x += dx[dir];
-			if (!isIn(y, x)) {
+
+			if (!isIn(y, x) || board[y][x] == '#') {
 				break;
 			}
-			if (board[y][x].equals("#")) {
-				break;
-			}
-			if (board[y][x].equals("*")) {
-				board[y][x] = ".";
+			if (board[y][x] == '*') {
+				board[y][x] = '.';
 				break;
 			}
 		}
 	}
 
-	static boolean isTank(int y, int x) {
-		return board[y][x].equals("<") || board[y][x].equals(">") || board[y][x].equals("^") || board[y][x].equals("v");
+	static boolean isTank(char c) {
+		return c == '<' || c == '>' || c == '^' || c == 'v';
+	}
+
+	static int getDir(char c) {
+		if (c == '^')
+			return 0;
+		if (c == 'v')
+			return 1;
+		if (c == '<')
+			return 2;
+		if (c == '>')
+			return 3;
+		return -1;
 	}
 
 	static boolean isIn(int y, int x) {
 		return y >= 0 && y < H && x >= 0 && x < W;
-	}
-
-	static boolean isFlat(int y, int x) {
-		return board[y][x].equals(".");
 	}
 }
