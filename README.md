@@ -12,6 +12,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 |  |
 | ------- |
 | [0070-climbing-stairs](https://github.com/lij0825/Algorithm/tree/master/0070-climbing-stairs) |
+| [0292-nim-game](https://github.com/lij0825/Algorithm/tree/master/0292-nim-game) |
 ## Dynamic Programming
 |  |
 | ------- |
@@ -25,4 +26,12 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 |  |
 | ------- |
 | [0008-string-to-integer-atoi](https://github.com/lij0825/Algorithm/tree/master/0008-string-to-integer-atoi) |
+## Brainteaser
+|  |
+| ------- |
+| [0292-nim-game](https://github.com/lij0825/Algorithm/tree/master/0292-nim-game) |
+## Game Theory
+|  |
+| ------- |
+| [0292-nim-game](https://github.com/lij0825/Algorithm/tree/master/0292-nim-game) |
 <!---LeetCode Topics End-->
