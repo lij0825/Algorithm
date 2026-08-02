@@ -7,17 +7,20 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 |  |
 | ------- |
 | [0747-min-cost-climbing-stairs](https://github.com/lij0825/Algorithm/tree/master/0747-min-cost-climbing-stairs) |
+| [0909-stone-game](https://github.com/lij0825/Algorithm/tree/master/0909-stone-game) |
 | [1580-shuffle-the-array](https://github.com/lij0825/Algorithm/tree/master/1580-shuffle-the-array) |
 ## Math
 |  |
 | ------- |
 | [0070-climbing-stairs](https://github.com/lij0825/Algorithm/tree/master/0070-climbing-stairs) |
 | [0292-nim-game](https://github.com/lij0825/Algorithm/tree/master/0292-nim-game) |
+| [0909-stone-game](https://github.com/lij0825/Algorithm/tree/master/0909-stone-game) |
 ## Dynamic Programming
 |  |
 | ------- |
 | [0070-climbing-stairs](https://github.com/lij0825/Algorithm/tree/master/0070-climbing-stairs) |
 | [0747-min-cost-climbing-stairs](https://github.com/lij0825/Algorithm/tree/master/0747-min-cost-climbing-stairs) |
+| [0909-stone-game](https://github.com/lij0825/Algorithm/tree/master/0909-stone-game) |
 ## Memoization
 |  |
 | ------- |
@@ -34,4 +37,5 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 |  |
 | ------- |
 | [0292-nim-game](https://github.com/lij0825/Algorithm/tree/master/0292-nim-game) |
+| [0909-stone-game](https://github.com/lij0825/Algorithm/tree/master/0909-stone-game) |
 <!---LeetCode Topics End-->
