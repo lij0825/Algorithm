@@ -8,6 +8,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 | ------- |
 | [0747-min-cost-climbing-stairs](https://github.com/lij0825/Algorithm/tree/master/0747-min-cost-climbing-stairs) |
 | [0909-stone-game](https://github.com/lij0825/Algorithm/tree/master/0909-stone-game) |
+| [1522-stone-game-iii](https://github.com/lij0825/Algorithm/tree/master/1522-stone-game-iii) |
 | [1580-shuffle-the-array](https://github.com/lij0825/Algorithm/tree/master/1580-shuffle-the-array) |
 ## Math
 |  |
@@ -15,12 +16,14 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 | [0070-climbing-stairs](https://github.com/lij0825/Algorithm/tree/master/0070-climbing-stairs) |
 | [0292-nim-game](https://github.com/lij0825/Algorithm/tree/master/0292-nim-game) |
 | [0909-stone-game](https://github.com/lij0825/Algorithm/tree/master/0909-stone-game) |
+| [1522-stone-game-iii](https://github.com/lij0825/Algorithm/tree/master/1522-stone-game-iii) |
 ## Dynamic Programming
 |  |
 | ------- |
 | [0070-climbing-stairs](https://github.com/lij0825/Algorithm/tree/master/0070-climbing-stairs) |
 | [0747-min-cost-climbing-stairs](https://github.com/lij0825/Algorithm/tree/master/0747-min-cost-climbing-stairs) |
 | [0909-stone-game](https://github.com/lij0825/Algorithm/tree/master/0909-stone-game) |
+| [1522-stone-game-iii](https://github.com/lij0825/Algorithm/tree/master/1522-stone-game-iii) |
 ## Memoization
 |  |
 | ------- |
@@ -38,4 +41,5 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 | ------- |
 | [0292-nim-game](https://github.com/lij0825/Algorithm/tree/master/0292-nim-game) |
 | [0909-stone-game](https://github.com/lij0825/Algorithm/tree/master/0909-stone-game) |
+| [1522-stone-game-iii](https://github.com/lij0825/Algorithm/tree/master/1522-stone-game-iii) |
 <!---LeetCode Topics End-->
