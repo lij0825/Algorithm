@@ -51,4 +51,16 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 |  |
 | ------- |
 | [4107-find-missing-elements](https://github.com/lij0825/Algorithm/tree/master/4107-find-missing-elements) |
+## Depth-First Search
+|  |
+| ------- |
+| [3561-remove-methods-from-project](https://github.com/lij0825/Algorithm/tree/master/3561-remove-methods-from-project) |
+## Breadth-First Search
+|  |
+| ------- |
+| [3561-remove-methods-from-project](https://github.com/lij0825/Algorithm/tree/master/3561-remove-methods-from-project) |
+## Graph Theory
+|  |
+| ------- |
+| [3561-remove-methods-from-project](https://github.com/lij0825/Algorithm/tree/master/3561-remove-methods-from-project) |
 <!---LeetCode Topics End-->
