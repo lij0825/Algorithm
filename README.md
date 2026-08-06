@@ -18,6 +18,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 | [0292-nim-game](https://github.com/lij0825/Algorithm/tree/master/0292-nim-game) |
 | [0909-stone-game](https://github.com/lij0825/Algorithm/tree/master/0909-stone-game) |
 | [1522-stone-game-iii](https://github.com/lij0825/Algorithm/tree/master/1522-stone-game-iii) |
+| [3626-smallest-divisible-digit-product-i](https://github.com/lij0825/Algorithm/tree/master/3626-smallest-divisible-digit-product-i) |
 ## Dynamic Programming
 |  |
 | ------- |
@@ -63,4 +64,8 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 |  |
 | ------- |
 | [3561-remove-methods-from-project](https://github.com/lij0825/Algorithm/tree/master/3561-remove-methods-from-project) |
+## Enumeration
+|  |
+| ------- |
+| [3626-smallest-divisible-digit-product-i](https://github.com/lij0825/Algorithm/tree/master/3626-smallest-divisible-digit-product-i) |
 <!---LeetCode Topics End-->
