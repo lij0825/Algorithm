@@ -19,6 +19,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 | [0909-stone-game](https://github.com/lij0825/Algorithm/tree/master/0909-stone-game) |
 | [1522-stone-game-iii](https://github.com/lij0825/Algorithm/tree/master/1522-stone-game-iii) |
 | [3626-smallest-divisible-digit-product-i](https://github.com/lij0825/Algorithm/tree/master/3626-smallest-divisible-digit-product-i) |
+| [3635-smallest-divisible-digit-product-ii](https://github.com/lij0825/Algorithm/tree/master/3635-smallest-divisible-digit-product-ii) |
 ## Dynamic Programming
 |  |
 | ------- |
@@ -34,6 +35,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 |  |
 | ------- |
 | [0008-string-to-integer-atoi](https://github.com/lij0825/Algorithm/tree/master/0008-string-to-integer-atoi) |
+| [3635-smallest-divisible-digit-product-ii](https://github.com/lij0825/Algorithm/tree/master/3635-smallest-divisible-digit-product-ii) |
 ## Brainteaser
 |  |
 | ------- |
@@ -68,4 +70,16 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 |  |
 | ------- |
 | [3626-smallest-divisible-digit-product-i](https://github.com/lij0825/Algorithm/tree/master/3626-smallest-divisible-digit-product-i) |
+## Backtracking
+|  |
+| ------- |
+| [3635-smallest-divisible-digit-product-ii](https://github.com/lij0825/Algorithm/tree/master/3635-smallest-divisible-digit-product-ii) |
+## Greedy
+|  |
+| ------- |
+| [3635-smallest-divisible-digit-product-ii](https://github.com/lij0825/Algorithm/tree/master/3635-smallest-divisible-digit-product-ii) |
+## Number Theory
+|  |
+| ------- |
+| [3635-smallest-divisible-digit-product-ii](https://github.com/lij0825/Algorithm/tree/master/3635-smallest-divisible-digit-product-ii) |
 <!---LeetCode Topics End-->
