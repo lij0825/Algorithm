@@ -8,6 +8,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 | ------- |
 | [0747-min-cost-climbing-stairs](https://github.com/lij0825/Algorithm/tree/master/0747-min-cost-climbing-stairs) |
 | [0909-stone-game](https://github.com/lij0825/Algorithm/tree/master/0909-stone-game) |
+| [1240-stone-game-ii](https://github.com/lij0825/Algorithm/tree/master/1240-stone-game-ii) |
 | [1522-stone-game-iii](https://github.com/lij0825/Algorithm/tree/master/1522-stone-game-iii) |
 | [1580-shuffle-the-array](https://github.com/lij0825/Algorithm/tree/master/1580-shuffle-the-array) |
 | [4107-find-missing-elements](https://github.com/lij0825/Algorithm/tree/master/4107-find-missing-elements) |
@@ -17,6 +18,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 | [0070-climbing-stairs](https://github.com/lij0825/Algorithm/tree/master/0070-climbing-stairs) |
 | [0292-nim-game](https://github.com/lij0825/Algorithm/tree/master/0292-nim-game) |
 | [0909-stone-game](https://github.com/lij0825/Algorithm/tree/master/0909-stone-game) |
+| [1240-stone-game-ii](https://github.com/lij0825/Algorithm/tree/master/1240-stone-game-ii) |
 | [1522-stone-game-iii](https://github.com/lij0825/Algorithm/tree/master/1522-stone-game-iii) |
 | [3626-smallest-divisible-digit-product-i](https://github.com/lij0825/Algorithm/tree/master/3626-smallest-divisible-digit-product-i) |
 | [3635-smallest-divisible-digit-product-ii](https://github.com/lij0825/Algorithm/tree/master/3635-smallest-divisible-digit-product-ii) |
@@ -26,6 +28,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 | [0070-climbing-stairs](https://github.com/lij0825/Algorithm/tree/master/0070-climbing-stairs) |
 | [0747-min-cost-climbing-stairs](https://github.com/lij0825/Algorithm/tree/master/0747-min-cost-climbing-stairs) |
 | [0909-stone-game](https://github.com/lij0825/Algorithm/tree/master/0909-stone-game) |
+| [1240-stone-game-ii](https://github.com/lij0825/Algorithm/tree/master/1240-stone-game-ii) |
 | [1522-stone-game-iii](https://github.com/lij0825/Algorithm/tree/master/1522-stone-game-iii) |
 ## Memoization
 |  |
@@ -45,6 +48,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 | ------- |
 | [0292-nim-game](https://github.com/lij0825/Algorithm/tree/master/0292-nim-game) |
 | [0909-stone-game](https://github.com/lij0825/Algorithm/tree/master/0909-stone-game) |
+| [1240-stone-game-ii](https://github.com/lij0825/Algorithm/tree/master/1240-stone-game-ii) |
 | [1522-stone-game-iii](https://github.com/lij0825/Algorithm/tree/master/1522-stone-game-iii) |
 ## Hash Table
 |  |
@@ -82,4 +86,16 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 |  |
 | ------- |
 | [3635-smallest-divisible-digit-product-ii](https://github.com/lij0825/Algorithm/tree/master/3635-smallest-divisible-digit-product-ii) |
+## Minimax
+|  |
+| ------- |
+| [1240-stone-game-ii](https://github.com/lij0825/Algorithm/tree/master/1240-stone-game-ii) |
+## Prefix Sum
+|  |
+| ------- |
+| [1240-stone-game-ii](https://github.com/lij0825/Algorithm/tree/master/1240-stone-game-ii) |
+## Zero-Sum Game
+|  |
+| ------- |
+| [1240-stone-game-ii](https://github.com/lij0825/Algorithm/tree/master/1240-stone-game-ii) |
 <!---LeetCode Topics End-->
