@@ -11,6 +11,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 | [1240-stone-game-ii](https://github.com/lij0825/Algorithm/tree/master/1240-stone-game-ii) |
 | [1522-stone-game-iii](https://github.com/lij0825/Algorithm/tree/master/1522-stone-game-iii) |
 | [1580-shuffle-the-array](https://github.com/lij0825/Algorithm/tree/master/1580-shuffle-the-array) |
+| [3236-smallest-missing-integer-greater-than-sequential-prefix-sum](https://github.com/lij0825/Algorithm/tree/master/3236-smallest-missing-integer-greater-than-sequential-prefix-sum) |
 | [4107-find-missing-elements](https://github.com/lij0825/Algorithm/tree/master/4107-find-missing-elements) |
 ## Math
 |  |
@@ -53,10 +54,12 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 ## Hash Table
 |  |
 | ------- |
+| [3236-smallest-missing-integer-greater-than-sequential-prefix-sum](https://github.com/lij0825/Algorithm/tree/master/3236-smallest-missing-integer-greater-than-sequential-prefix-sum) |
 | [4107-find-missing-elements](https://github.com/lij0825/Algorithm/tree/master/4107-find-missing-elements) |
 ## Sorting
 |  |
 | ------- |
+| [3236-smallest-missing-integer-greater-than-sequential-prefix-sum](https://github.com/lij0825/Algorithm/tree/master/3236-smallest-missing-integer-greater-than-sequential-prefix-sum) |
 | [4107-find-missing-elements](https://github.com/lij0825/Algorithm/tree/master/4107-find-missing-elements) |
 ## Depth-First Search
 |  |
