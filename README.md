@@ -64,6 +64,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 ## Depth-First Search
 |  |
 | ------- |
+| [0094-binary-tree-inorder-traversal](https://github.com/lij0825/Algorithm/tree/master/0094-binary-tree-inorder-traversal) |
 | [3561-remove-methods-from-project](https://github.com/lij0825/Algorithm/tree/master/3561-remove-methods-from-project) |
 ## Breadth-First Search
 |  |
@@ -101,4 +102,16 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 |  |
 | ------- |
 | [1240-stone-game-ii](https://github.com/lij0825/Algorithm/tree/master/1240-stone-game-ii) |
+## Stack
+|  |
+| ------- |
+| [0094-binary-tree-inorder-traversal](https://github.com/lij0825/Algorithm/tree/master/0094-binary-tree-inorder-traversal) |
+## Tree
+|  |
+| ------- |
+| [0094-binary-tree-inorder-traversal](https://github.com/lij0825/Algorithm/tree/master/0094-binary-tree-inorder-traversal) |
+## Binary Tree
+|  |
+| ------- |
+| [0094-binary-tree-inorder-traversal](https://github.com/lij0825/Algorithm/tree/master/0094-binary-tree-inorder-traversal) |
 <!---LeetCode Topics End-->
