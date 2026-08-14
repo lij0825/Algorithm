@@ -39,6 +39,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 |  |
 | ------- |
 | [0008-string-to-integer-atoi](https://github.com/lij0825/Algorithm/tree/master/0008-string-to-integer-atoi) |
+| [3349-maximum-length-substring-with-two-occurrences](https://github.com/lij0825/Algorithm/tree/master/3349-maximum-length-substring-with-two-occurrences) |
 | [3635-smallest-divisible-digit-product-ii](https://github.com/lij0825/Algorithm/tree/master/3635-smallest-divisible-digit-product-ii) |
 ## Brainteaser
 |  |
@@ -55,6 +56,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 |  |
 | ------- |
 | [3236-smallest-missing-integer-greater-than-sequential-prefix-sum](https://github.com/lij0825/Algorithm/tree/master/3236-smallest-missing-integer-greater-than-sequential-prefix-sum) |
+| [3349-maximum-length-substring-with-two-occurrences](https://github.com/lij0825/Algorithm/tree/master/3349-maximum-length-substring-with-two-occurrences) |
 | [4107-find-missing-elements](https://github.com/lij0825/Algorithm/tree/master/4107-find-missing-elements) |
 ## Sorting
 |  |
@@ -114,4 +116,8 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 |  |
 | ------- |
 | [0094-binary-tree-inorder-traversal](https://github.com/lij0825/Algorithm/tree/master/0094-binary-tree-inorder-traversal) |
+## Sliding Window
+|  |
+| ------- |
+| [3349-maximum-length-substring-with-two-occurrences](https://github.com/lij0825/Algorithm/tree/master/3349-maximum-length-substring-with-two-occurrences) |
 <!---LeetCode Topics End-->
