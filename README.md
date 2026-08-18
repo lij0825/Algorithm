@@ -12,6 +12,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 | [1522-stone-game-iii](https://github.com/lij0825/Algorithm/tree/master/1522-stone-game-iii) |
 | [1580-shuffle-the-array](https://github.com/lij0825/Algorithm/tree/master/1580-shuffle-the-array) |
 | [3236-smallest-missing-integer-greater-than-sequential-prefix-sum](https://github.com/lij0825/Algorithm/tree/master/3236-smallest-missing-integer-greater-than-sequential-prefix-sum) |
+| [4033-longest-subsequence-with-non-zero-bitwise-xor](https://github.com/lij0825/Algorithm/tree/master/4033-longest-subsequence-with-non-zero-bitwise-xor) |
 | [4107-find-missing-elements](https://github.com/lij0825/Algorithm/tree/master/4107-find-missing-elements) |
 ## Math
 |  |
@@ -120,4 +121,8 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 |  |
 | ------- |
 | [3349-maximum-length-substring-with-two-occurrences](https://github.com/lij0825/Algorithm/tree/master/3349-maximum-length-substring-with-two-occurrences) |
+## Bit Manipulation
+|  |
+| ------- |
+| [4033-longest-subsequence-with-non-zero-bitwise-xor](https://github.com/lij0825/Algorithm/tree/master/4033-longest-subsequence-with-non-zero-bitwise-xor) |
 <!---LeetCode Topics End-->
